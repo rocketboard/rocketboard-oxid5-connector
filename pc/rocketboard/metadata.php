@@ -32,7 +32,7 @@ $aModule = array(
         'en' => 'Module to send shop infos to Rocketboard.io',
     ],
     'thumbnail'     => '',
-    'version'       => '1.3.0',
+    'version'       => '1.3.1',
     'author'        => 'ProudCommerce',
     'url'           => 'https://rocketboard.io',
     'email'         => 'support@rocketboard.io',

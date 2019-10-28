@@ -1,6 +1,6 @@
 {
     "name": "rocketboard/oxid5-connector",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "description": "RocketBoard OXID eShop 4/5 Connector",
     "type": "oxideshop-module",
     "keywords": [],

@@ -58,6 +58,16 @@ class Rocketboard extends oxUBase
     public function render()
     {
         $oConfig = oxRegistry::getConfig();
+        $token = $oConfig->getShopConfVar('rocketToken');
+        $reqToken = $oConfig->getRequestParameter('rocketToken');
+        if ($token) {
+            if (!$reqToken || $reqToken != $token) {
+                die("Configuration token does not match parameter 'rocketToken'!");
+            }
+        } else {
+            die("Please set a token in the configuration!");
+        }
+
         $this->utils = oxRegistry::getUtils();
         $this->oDb = oxDb::getDb(oxDB::FETCH_MODE_ASSOC);
         $what = $oConfig->getRequestParameter('what');
@@ -71,16 +81,6 @@ class Rocketboard extends oxUBase
                 break;
             default:
                 $data = $this->getAppInfo($what);
-        }
-
-        $token = $oConfig->getShopConfVar('rocketToken');
-        $reqToken = $oConfig->getRequestParameter('rocketToken');
-        if ($token) {
-            if (!$reqToken || $reqToken != $token) {
-                die("Configuration token does not match parameter 'rocketToken'!");
-            }
-        } else {
-            die("Please set a token in the configuration!");
         }
 
         array_walk_recursive(
