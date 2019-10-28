@@ -1,0 +1,31 @@
+{
+    "name": "rocketboard/oxid5-connector",
+    "version": "1.3.0",
+    "description": "RocketBoard OXID eShop 4/5 Connector",
+    "type": "oxideshop-module",
+    "keywords": [],
+    "license": [],
+    "require": {
+        "php": ">= 5.4"
+    },    
+    "extra": {
+        "oxideshop": {
+            "blacklist-filter": [
+                "documentation/**/*.*",
+                "composer.json"
+            ],
+            "target-directory": "pc/rocketboard"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "ProudCommerce\\Rocketboard\\": "../../../source/modules/pc/rocketboard"
+        }
+    },
+    "authors": [
+        {
+            "name": "ProudCommerce",
+            "email": "beffy@proudcommerce.com"
+        }
+    ]
+}
